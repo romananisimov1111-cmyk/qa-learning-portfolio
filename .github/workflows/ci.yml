@@ -1,0 +1,27 @@
+name: Мой первый CI пайплайн
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Скачать код репозитория
+        uses: actions/checkout@v4
+      
+      - name: 👋 Приветствие
+        run: echo "Привет! Пайплайн запущен автоматически!"
+      
+      - name: 📂 Показать файлы в репозитории
+        run: ls -la
+      
+      - name: 🧪 Запуск тестов (заглушка)
+        run: echo "Тесты успешно прошли! ✅"
+      
+      - name: 🎉 Завершение
+        run: echo "Пайплайн завершён. Можно деплоить!"
